@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infiniti Style</title>
-    <link rel="stylesheet" href="styleperso.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     
@@ -58,7 +58,8 @@
                 </li>
                 <li>
                     <a href="indexcar.html" class="carrinho-link">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="contador-carrinho"></span>
                     </a>
                 </li>
             </ul>
@@ -382,7 +383,17 @@ function moverImagem(direcao) {
 
 
         </script>
-        
+
+        <script>
+            function atualizarContador() {
+                const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+                const contador = document.getElementById('contador-carrinho');
+                const total = carrinho.length;
+                contador.textContent = total > 0 ? total : '';
+            }
+            atualizarContador();
+        </script>
+        <script src="script.js"></script>  
         
 <div class="blusa">
     <div class="blusa-img">

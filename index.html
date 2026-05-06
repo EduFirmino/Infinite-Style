@@ -67,20 +67,13 @@
                 </li>
                 <li>
                     <a href="indexcar.html" class="carrinho-link">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="contador-carrinho"></span>
                     </a>
                 </li>
             </ul>
         </nav>
 
-        <script>
-            var menu = document.querySelector('nav ul');
-            var menuIcon = document.querySelector('.menu-icon');
-    
-            function abrirMenu(){
-                menu.classList.toggle('open');
-            }
-        </script>
     
         <section class="interface">
 
@@ -98,21 +91,27 @@
             <div class="produtos-fila">
 
                 <div class="produto">
-                    <img src="img/Blusa 3.jpg" alt="Blusa Estilo 1">
+                    <a href="indexeagle.html?protuto=Eagle">
+                        <img src="img/Blusa 3.jpg" alt="Blusa Estilo 1">
+                    </a>
                     <h3>Eagle</h3>
                     <p>R$89,90</p>
                     <button onclick="window.location.href='indexeagle.html?produto=Eagle'">Comprar</button>
                 </div>
 
                 <div class="produto">
-                    <img src="img/Blusa 2.jpg" alt="Blusa Estilo 2">
+                    <a href="indexwhite.html?produto=white">
+                        <img src="img/Blusa 2.jpg" alt="Blusa Estilo 2">
+                    </a>
                     <h3>White basic</h3>
                     <p>R$79,90</p>
                     <button onclick="window.location.href='indexwhite.html?produto=white'">Comprar</button>
                 </div>
 
                 <div class="produto">
-                    <img src="img/Miles_morales.png" alt="Blusa Estilo 3">
+                    <a href="indexmiles.html?produto=Miles_morales">
+                        <img src="img/Miles_morales.png" alt="Blusa Estilo 3">
+                    </a>
                     <h3>Milles Morales</h3>
                     <p>R$127,90</p>
                     <button onclick="window.location.href='indexmiles.html?produto=Miles_morales'">Comprar</button>
@@ -120,7 +119,9 @@
                 </div>
 
                  <div class="produto">
-                    <img src="img/Mãos.png" alt="Blusa Estilo 4">
+                    <a href="indexmaos.html?protuto=maos">
+                        <img src="img/Maos.png" alt="Blusa Estilo 4">
+                    </a>
                     <h3>Infinite Hands</h3>
                     <p>R$119,90</p>
                     <button onclick="window.location.href='indexmaos.html?produto=maos'">Comprar</button>
@@ -128,8 +129,9 @@
                  </div>
 
                  <div class="produto">
-
-                    <img src="img/Female Eagle.png" alt="Blusa Estilo 5">
+                    <a href="indexfemeagel.html?produto=Eagle">
+                        <img src="img/Female Eagle.png" alt="Blusa Estilo 5">
+                    </a>
                     <h3>Female Eagle</h3>
                     <p>R$89,90</p>
                     <button onclick="window.location.href='indexfemeagel.html?produto=Eagle'">Comprar</button>
@@ -137,15 +139,19 @@
                     </div>
 
                 <div class="produto">
-                      <img src="img/basic white female.png">
-                     <h3> Female white basic</h3>
-                     <p>R$49,90</p>
-                     <button onclick="window.location.href='indexcropbranc.html?produto=Cropped'">Comprar</button>
+                    <a href="indexcropbranc.html?produto=Cropped">
+                        <img src="img/basic white female.png">
+                    </a>
+                    <h3> Female white basic</h3>
+                    <p>R$49,90</p>
+                    <button onclick="window.location.href='indexcropbranc.html?produto=Cropped'">Comprar</button>
     
                 </div>
 
                 <div class="produto">
-                    <img src="img/cropped2.png" alt="Blusa Estilo 6">
+                    <a href="indexfemiles.html?produto=crooped">
+                        <img src="img/cropped2.png" alt="Blusa Estilo 6">
+                    </a>
                     <h3>Female Milles Morales</h3>
                     <p>R$119,90</p>
                     <button onclick="window.location.href='indexfemiles.html?produto=crooped'">Comprar</button>
@@ -153,22 +159,23 @@
                 </div>
 
                     <div class="produto">
-                        <img src="img/Cropped.png" alt="Blusa Estilo 7">
+                        <a href="indexfemaos.html?produto=fem maos">
+                            <img src="img/Cropped.png" alt="Blusa Estilo 7">
+                        </a>    
                         <h3>Female infinite Hands</h3>
                         <p>R$119,90</p>
                         <button onclick="window.location.href='indexfemaos.html?produto=fem maos'">Comprar</button>
 
                     </div>
-    
 
         </section>
 
     </main>
-    
+
+    <footer></footer>
+
     <script src="script.js"></script>
 
-    <footer>
-      
-    </footer>
 </body>
+    
 </html>

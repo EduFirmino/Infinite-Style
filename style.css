@@ -1,4 +1,15 @@
-/*CONFIGURAÇÃO DA PÁG*/
+/* ================================================
+   INFINITE STYLE - CSS UNIFICADO
+   Substitui: style.css, stylecar.css, stylecontato.css,
+   stylecropbranc.css, styleeagel.css, stylefemaos.css,
+   stylefemeagle.css, stylefemile.css, stylemaos.css,
+   stylemiles.css, styleperso.css, stylesobre.css, stylewhite.css
+   ================================================ */
+
+
+/* ================================================
+   1. RESET E CONFIGURAÇÃO GERAL
+   ================================================ */
 
 * {
     margin: 0;
@@ -16,7 +27,166 @@ header, main, footer {
     padding: 0;
 }
 
-/* CARROSEL (SLIDES) */
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+    padding: 10px;
+}
+
+h4 {
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+p {
+    font-size: 20px;
+    padding: 7px;
+}
+
+
+/* ================================================
+   2. NAVEGAÇÃO (igual em todas as páginas)
+   ================================================ */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #000000;
+    align-items: center;
+    display: flex;
+    padding: 13px 5%;
+    height: 75px;
+    z-index: 100;
+}
+
+ul {
+    list-style: none;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav .logo {
+    padding-top: 10px;
+    width: 150px;
+}
+
+nav .logo img {
+    width: 105%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 20px;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+nav ul li a:hover {
+    color: #54a062d7;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    filter: invert(1);
+}
+
+.carrinho-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho-icon {
+    width: 40px;
+    cursor: pointer;
+}
+
+
+/* ================================================
+   3. RODAPÉ (igual em todas as páginas)
+   ================================================ */
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #000000;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* ================================================
+   4. BOTÕES GERAIS
+   ================================================ */
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 23px;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+button:hover {
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #54a062d7;
+}
+
+.btn2 {
+    background-color: #54a062d7;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    border-radius: 30px;
+    transform: scale(1.00);
+    text-decoration: none;
+}
+
+.btn2:hover {
+    transform: scale(1.05);
+    background-color: #54a0627d;
+}
+
+.selecionado {
+    background-color: #54a062d7;
+    color: rgb(0, 0, 0);
+}
+
+
+/* ================================================
+   5. PÁGINA INICIAL - CARROSSEL
+   ================================================ */
 
 .carousel {
     width: 100%;
@@ -32,7 +202,6 @@ header, main, footer {
     width: 100%;
     height: 100%;
     animation: slide 25s infinite;
-    
 }
 
 .carousel-slide {
@@ -47,186 +216,19 @@ header, main, footer {
 }
 
 @keyframes slide {
-    0% { transform: translateX(0); }
-    16.66% { transform: translateX(0); }   /* Pausa no slide 1 */
+    0%     { transform: translateX(0); }
+    16.66% { transform: translateX(0); }
     33.32% { transform: translateX(-100%); }
-    49.98% { transform: translateX(-100%); } /* Pausa no slide 2 */
+    49.98% { transform: translateX(-100%); }
     66.64% { transform: translateX(-200%); }
-    83.3% { transform: translateX(-200%); }  /* Pausa no slide 3 */
-    100% { transform: translateX(0); }
+    83.3%  { transform: translateX(-200%); }
+    100%   { transform: translateX(0); }
 }
 
-/*ESTILIZAÇÃO MENU*/
 
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;   
-    justify-content: space-between;
-     background-color: #000000;
-     align-items: center;
-     display: flex;
-     padding: 13px 5%;
-     height: 75px;
-     
- }
-     
- ul{
-    list-style: none;
-    line-height: 0;
-    list-style: none;
-    display: flex;
-    align-items: center; ;
- }
- 
- nav .logo{
-    padding-top: 10px;
-     width: 150px;
- }
- 
- nav .logo img{
-     width: 105%;
- }
- 
- nav ul li{
-     display: inline-block;
-     padding: 20px;
- }
- 
- nav ul li a{
-     color: rgb(255, 255, 255);
-     text-decoration: none;
-     transition: 0.5s;
-     font-size: 25px;
- }
- 
- nav ul li a:hover{
-     color: #54a062d7;
- }
- 
- .menu-icon{
-     display: none;
-     cursor: pointer;
- 
- }
- .menu-icon img{
-     filter: invert(1);
- }
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.carrinho-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carrinho-icon {
-    width: 40px; 
-    cursor: pointer;
-}
-
-/* ESTILIÇÃO MENU MOBILE */
-
-@media (max-width:770px) {
-
-    /* CLASSE GERAL */
-
-    .flex{
-        flex-direction: column;   
-    }
-
-    .carousel-container{
-        width: 100%;
-        height: 100%;
-        padding-top: 60px;
-    }
-
-    .produto {
-        flex-basis: 48%; 
-        margin-bottom: 20px;
-    }
-
-    .produtos-fila{
-        flex-basis: 20%;
-    }
-  
-    .interface h2{
-        font-size: 20px;
-    }
-
-    .interface h4{
-        font-size: 17px;
-        padding: 25px;
-    }
-
-    .produto{
-        display: grid;
-        width: 10px;
-
-    }
-
-    .produtos .produtos-fila{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    
-    
-    .interface .btn2{
-        font-size: 15px;
-    }
-    
-
-    /* MENU */
-    .menu-icon{
-        display: block;
-        z-index: 10;
-    }
-
-    nav ul{
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 60%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        transform: translateX(100%);
-        transition: transform 0.6s ease-in;
-        background-color: #00000074;
-    }
-    nav ul.open{
-        transform: translateX(0);
-    }
-    nav ul li{
-        margin: 10px 0;
-    }
-    nav ul li a{
-        font-size: 1.6rem;
-    }
-
-}
-
-/* TOPO DO SITE */
+/* ================================================
+   6. PÁGINA INICIAL - SEÇÃO TOPO
+   ================================================ */
 
 .interface {
     padding: 2rem;
@@ -234,44 +236,16 @@ nav ul li a {
     background: #000000;
     color: #ffffff;
     padding-top: 50px;
-    
 }
 
-.interdace h2 {
+.interface h2 {
     margin-bottom: 1rem;
 }
 
 
-
-/* PERSONALIZAÇÃO TOPO DO SITE  */
-
-h2{
-    font-size: 30px;
-}
-
-h4{
-    font-size: 25px;
-    padding-bottom: 15px;
-}
-
-.btn2{
-    background-color: #54a062d7;
-    font-size: 20px;
-    color: #fff;
-    padding: 10px;
-    cursor: pointer;
-    width: 100px;
-    text-align: center;
-    border-radius: 30px;
-    transform: scale(1.00);
-    text-decoration: none;
-}
-
-.btn2:hover{
-    transform: scale(1.05);
-    background-color: #54a0627d;
-}
-
+/* ================================================
+   7. PÁGINA INICIAL - GRADE DE PRODUTOS
+   ================================================ */
 
 .produtos {
     padding: 2rem;
@@ -280,11 +254,9 @@ h4{
 
 .produtos-fila {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
-
-
 
 .produto {
     border: 1px solid #ffffff;
@@ -293,57 +265,480 @@ h4{
     width: 100%;
 }
 
-
 .produto img {
     max-width: 100%;
     height: auto;
 }
 
- /* ESTILIZAÇÃO TEXTO E BOTÃO PRODUTO */
- 
 
- button{
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 23px;
-    border-radius: 20px;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+/* ================================================
+   8. PÁGINAS DE PRODUTO INDIVIDUAL
+   ================================================ */
+
+.blusa {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 100px 20px;
 }
 
-button:hover{
-    background-color: rgb(0, 0, 0);
+.blusa-img {
+    width: 33%;
+}
+
+.blusa-img img {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.detalhe {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+}
+
+.detalhe h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    color: rgb(0, 0, 0);
+}
+
+.preco {
+    font-size: 22px;
+    color: #000000d7;
+    margin-bottom: 5px;
+}
+
+.descriçao {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.tamanho-cor h3 {
+    margin-bottom: 10px;
+}
+
+.tamanho {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.tamanho button {
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #000000;
+    border-radius: 0;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.tamanho button:hover {
+    background-color: #54a062d7;
+    color: white;
+}
+
+/* Controle de quantidade */
+.quantidade-controle {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+
+.quantidade-controle button {
+    width: 35px;
+    height: 35px;
+    background-color: #54a062d7;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.quantidade-controle button:hover {
+    background-color: #459853;
+    color: white;
+}
+
+.quantidade-controle input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Botões comprar e adicionar ao carrinho */
+.comprar, .adicionar-carrinho {
+    background-color: #54a062d7;
+    padding: 15px 35px;
+    margin-top: 20px;
+    color: white;
+    border: none;
+    border-radius: 0;
+    width: 48%;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.comprar:hover, .adicionar-carrinho:hover {
+    background-color: #000000;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* ================================================
+   9. PÁGINA DE PERSONALIZAÇÃO
+   ================================================ */
+
+.Produto-blusa {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 100px 20px;
+}
+
+.opcao {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.fem, .masc {
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #000000;
+    background-color: #fff;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.fem:hover, .masc:hover {
+    background-color: #54a062d7;
+    color: white;
+}
+
+.estilos {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+.estilos button {
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+.estilos button:hover {
+    background: #54a062d7;
+    color: #fff;
+}
+
+.cores {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.cores .cor {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    cursor: pointer;
+}
+
+.cores .cor.um  { background-color: #e7e7e7; }
+.cores .cor.dois { background-color: #000000; }
+.cores .cor.tres { background-color: rgb(128, 12, 12); }
+
+.carregar-btn {
+    display: inline-block;
+    background-color: #54a062d7;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+.carregar-btn:hover {
+    background-color: #000000;
+}
+
+.opções {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.opções button {
+    background-color: #54a062d7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+.opções button:hover {
+    background-color: #000000d7;
+    color: #fff;
+}
+
+#blusa-img { width: 100%; }
+
+#carregar-image {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: auto;
+    display: none;
+}
+
+#tamanho-estampa {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #000;
+}
+
+.controles-movimento {
+    display: none;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: #54a062d7;
+}
+
+.controles-movimento button {
+    color: #000000;
+    margin: 5px;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 0;
+}
+
+
+/* ================================================
+   10. PÁGINA DO CARRINHO
+   ================================================ */
+
+#carrinho-itens {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 70px;
+}
+
+.carrinho-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-size: 1.1rem;
+}
+
+.carrinho-link {
+    position: relative;
+}
+
+#contador-carrinho {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #54a062d7;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.carrinho-item p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.carrinho-item img {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.imagem-carrinho {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.imagem-carregada {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    height: auto;
+    z-index: 1;
+}
+
+.carrinho-item .imagem-carregada {
+    width: 30px;
+    margin-left: 37px;
+    margin-bottom: 30px;
+}
+
+.lixeira {
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.deletar {
     cursor: pointer;
     color: #54a062d7;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-size: 1.1rem;
 }
 
-p{
-    font-size: 20px;
-    padding: 7px;
+#total-compra {
+    font-size: 15px;
+    white-space: nowrap;
 }
 
-h3{
-    font-size: 25px;
-    padding: 10px;
+footer.carrinho-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1rem;
+    font-weight: bold;
 }
 
-/* RODAPÉ */
 
-footer {
-    text-align: center;
-    padding: 1rem;
+/* ================================================
+   11. PÁGINA DE CONTATO
+   ================================================ */
+
+body.pagina-contato {
+    background-image: url("img/Fundo bom.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     background-color: #000000;
     color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.customize-section {
-    padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+}
+
+.form-section, .contact-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-section {
+    flex: 1;
+    margin-right: 290px;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section label {
+    margin-top: 10px;
+}
+
+.form-section input, .form-section textarea {
+    margin-top: 10px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.form-section button {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(22, 63, 22);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.contact-info h2 {
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.contact-info p {
+    color: rgb(72, 141, 83);
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: rgb(56, 128, 67);
+    text-decoration: none;
 }
 
 form label {
@@ -358,3 +753,222 @@ form select, form input[type="file"] {
 }
 
 
+/* ================================================
+   12. PÁGINA SOBRE
+   ================================================ */
+
+body.pagina-sobre {
+    background-image: url("./img/fundo3.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.sobre {
+    padding-left: 5%;
+    text-align: center;
+    font-size: 70px;
+    padding-right: 15%;
+}
+
+.textin {
+    padding-right: 5%;
+    padding-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.customize-section {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ================================================
+   13. RESPONSIVIDADE MOBILE (max-width: 770px)
+   ================================================ */
+
+@media (max-width: 770px) {
+
+    /* Menu hambúrguer */
+    .menu-icon {
+        display: block;
+        z-index: 10;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.6s ease-in;
+        background-color: #00000074;
+    }
+
+    nav ul.open {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.6rem;
+    }
+
+    /* Carrossel */
+    .carousel-container {
+        width: 100%;
+        height: 100%;
+        padding-top: 60px;
+    }
+
+    /* Interface topo */
+    .interface h2 { font-size: 20px; }
+    .interface h4 { font-size: 17px; padding: 25px; }
+    .interface .btn2 { font-size: 15px; }
+
+    /* Grade de produtos */
+    .produtos .produtos-fila {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .produto {
+        display: grid;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Página de produto */
+    .blusa {
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .blusa .blusa-img {
+        width: 90%;
+        padding-left: 30px;
+    }
+
+    .blusa .detalhe h1 {
+        font-size: 30px;
+        white-space: nowrap;
+        padding-left: 10px;
+    }
+
+    .blusa .detalhe .preco {
+        font-size: 30px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .blusa .detalhe .descriçao {
+        font-size: 15px;
+        font-weight: bold;
+        word-wrap: break-word;
+        white-space: normal;
+        margin: 10px 0;
+    }
+
+    .blusa .tamanho-cor {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .blusa .comprar {
+        padding: 15px 20px;
+        font-size: 15px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .blusa .adicionar-carrinho {
+        padding: 15px 20px;
+        font-size: 15px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Carrinho */
+    .carrinho-item {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .carrinho-item p {
+        font-size: 18px;
+        white-space: normal;
+    }
+
+    .lixeira { display: none; }
+
+    /* Contato */
+    .container {
+        flex-direction: column;
+    }
+
+    .container .form-section {
+        margin-right: 0;
+        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+
+    .container .contact-info {
+        margin-left: 0;
+    }
+
+    /* Sobre */
+    body.pagina-sobre {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 100px;
+    }
+
+    .sobre {
+        font-size: 40px;
+        margin-bottom: 20px;
+        padding-top: 60px;
+    }
+
+    .textin {
+        padding-left: 30px;
+    }
+
+    /* Personalização */
+    .blusa .controles-movimento {
+        display: flex;
+        margin-left: 25px;
+        gap: 20px;
+    }
+
+    .blusa .controles-movimento button {
+        font-weight: bold;
+        font-size: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
