@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="stylecar.css">  
+    <style>
+        .carrinho-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            margin-left: 10px; /* Para adicionar espaço entre os botões */
+        }
+
+        .imagem-carregada {
+    position: absolute; 
+    top: 10; 
+    left: 10; 
+     
+    height: 1; 
+    z-index: 1; 
+}
+    .carrinho-item .imagem-carregada {
+     width: 1; /* Tente ajustar a largura aqui */
+}
+        
+        
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CARRINHO DE COMPRAS</h1>
+</header>
+
+<main>
+    <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/1727998195631.png">
+            </a>
+        </div>
+
+        <div class="menu-icon" onclick="abrirMenu()">
+            <img src="img/menu.png">
+        </div>
+
+        <ul>
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+            <li>
+                <a href="indexperso.html">
+                    Personalizar
+                </a>
+            </li>
+            <li>
+                <a href="indexsobre.html">
+                    Sobre
+                </a>
+            </li>
+            <li>
+                <a href="indxexcontato.html">
+                    Contato
+                </a>
+            </li>
+            <li>
+                <a href="indexcar.html" class="carrinho-link">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        var menu = document.querySelector('nav ul');
+        var menuIcon = document.querySelector('.menu-icon');
+    
+        function abrirMenu() {
+            menu.classList.toggle('open');
+        }
+
+        function mostrarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const carrinhoDiv = document.getElementById('carrinho-itens');
+            const totalDiv = document.getElementById('total-compra');
+            carrinhoDiv.innerHTML = '';
+            let total = 0;
+
+            if (carrinho.length === 0) {
+                carrinhoDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
+                totalDiv.innerHTML = 'Total: R$ 0,00';
+                return;
+            }
+            
+
+            carrinho.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('carrinho-item');
+                const itemTotal = item.preco * item.quantidade;
+                total += itemTotal;
+                itemDiv.innerHTML = `
+                    
+                     ${item.imagemCarregadaUrl ? `<img src="${item.imagemCarregadaUrl}" alt="Imagem Carregada" class="imagem-carregada" />` : ''}
+                    <img src="${item.imagem}" alt="${item.nome}" width="100"> <!-- Aumentando a largura da imagem -->
+                    <p>${item.nome} - Tamanho: ${item.tamanho} - Qtd: ${item.quantidade} - R$ ${itemTotal.toFixed(2)}</p>
+                    <span class="lixeira" onclick="removerItem(${index})">🗑️</span>
+                    <button class="deletar" onclick="removerItem(${index})">Deletar</button>
+                     
+                `;
+                carrinhoDiv.appendChild(itemDiv);
+            });
+
+            totalDiv.innerHTML = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        function removerItem(index) {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.splice(index, 1);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            mostrarCarrinho(); 
+        }
+
+        function finalizarCompra() {
+            alert('Compra finalizada! Obrigado!');
+            localStorage.removeItem('carrinho');
+            mostrarCarrinho();
+        }
+
+        function continuarComprando() {
+            window.location.href = 'index.html';
+        }
+
+        window.onload = mostrarCarrinho;
+        
+    </script>
+
+    <div id="carrinho-itens"></div>
+   
+</main>
+
+<footer>
+    <div id="total-compra">Total: R$ 0,00</div>
+    <div>
+        <button onclick="continuarComprando()">Continuar comprando</button> <!-- Botão para continuar comprando -->
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+</footer>
+</body>
+</html>

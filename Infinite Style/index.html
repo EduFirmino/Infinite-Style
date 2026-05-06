@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infiniti Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="carousel">
+        <div class="carousel-container">
+
+            <div class="carousel-slide">
+
+                <img src="img/1.jpg" alt="Slide 1">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="img/2.jpg" alt="Slide 2">
+            </div>
+
+            <div class="carousel-slide">
+                <img src="img/3.jpg" alt="Slide 3">
+            </div>
+
+        </div>
+    </div>
+
+    <header>
+    </header>
+
+    <main>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/1727998195631.png">
+                </a>
+            </div>
+
+            <div class="menu-icon" onclick="abrirMenu()">
+                <img src="img/menu.png">
+            </div>
+    
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Início
+                    </a>
+                </li>
+                <li>
+                    <a href="indexperso.html">
+                        Personalizar
+                    </a>
+                </li>
+                <li>
+                    <a href="indexsobre.html">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="indxexcontato.html">
+                        Contato
+                    </a>
+                </li>
+                <li>
+                    <a href="indexcar.html" class="carrinho-link">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <script>
+            var menu = document.querySelector('nav ul');
+            var menuIcon = document.querySelector('.menu-icon');
+    
+            function abrirMenu(){
+                menu.classList.toggle('open');
+            }
+        </script>
+    
+        <section class="interface">
+
+            <h2>Aqui você pode personalizar suas próprias roupas.</h2>
+            <h4> Vista sua criatividade!</h4>
+
+            <a href="indexperso.html" class="btn2">Personalizar agora</a>
+
+        </section>
+
+        <section class="produtos">
+            
+            <h2>Nossos Modelos</h2>
+
+            <div class="produtos-fila">
+
+                <div class="produto">
+                    <img src="img/Blusa 3.jpg" alt="Blusa Estilo 1">
+                    <h3>Eagle</h3>
+                    <p>R$89,90</p>
+                    <button onclick="window.location.href='indexeagle.html?produto=Eagle'">Comprar</button>
+                </div>
+
+                <div class="produto">
+                    <img src="img/Blusa 2.jpg" alt="Blusa Estilo 2">
+                    <h3>White basic</h3>
+                    <p>R$79,90</p>
+                    <button onclick="window.location.href='indexwhite.html?produto=white'">Comprar</button>
+                </div>
+
+                <div class="produto">
+                    <img src="img/Miles_morales.png" alt="Blusa Estilo 3">
+                    <h3>Milles Morales</h3>
+                    <p>R$127,90</p>
+                    <button onclick="window.location.href='indexmiles.html?produto=Miles_morales'">Comprar</button>
+               
+                </div>
+
+                 <div class="produto">
+                    <img src="img/Mãos.png" alt="Blusa Estilo 4">
+                    <h3>Infinite Hands</h3>
+                    <p>R$119,90</p>
+                    <button onclick="window.location.href='indexmaos.html?produto=maos'">Comprar</button>
+            
+                 </div>
+
+                 <div class="produto">
+
+                    <img src="img/Female Eagle.png" alt="Blusa Estilo 5">
+                    <h3>Female Eagle</h3>
+                    <p>R$89,90</p>
+                    <button onclick="window.location.href='indexfemeagel.html?produto=Eagle'">Comprar</button>
+        
+                    </div>
+
+                <div class="produto">
+                      <img src="img/basic white female.png">
+                     <h3> Female white basic</h3>
+                     <p>R$49,90</p>
+                     <button onclick="window.location.href='indexcropbranc.html?produto=Cropped'">Comprar</button>
+    
+                </div>
+
+                <div class="produto">
+                    <img src="img/cropped2.png" alt="Blusa Estilo 6">
+                    <h3>Female Milles Morales</h3>
+                    <p>R$119,90</p>
+                    <button onclick="window.location.href='indexfemiles.html?produto=crooped'">Comprar</button>
+
+                </div>
+
+                    <div class="produto">
+                        <img src="img/Cropped.png" alt="Blusa Estilo 7">
+                        <h3>Female infinite Hands</h3>
+                        <p>R$119,90</p>
+                        <button onclick="window.location.href='indexfemaos.html?produto=fem maos'">Comprar</button>
+
+                    </div>
+    
+
+        </section>
+
+    </main>
+    
+    <script src="script.js"></script>
+
+    <footer>
+      
+    </footer>
+</body>
+</html>

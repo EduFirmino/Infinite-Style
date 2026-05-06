@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infiniti Style</title>
+    <link rel="stylesheet" href="styleperso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    
+</head>
+
+    <style>
+        .selecionado{
+            background-color: #54a062d7;
+            color: rgb(0, 0, 0);
+        }
+
+    </style>
+
+<body>
+
+    <header>
+    </header>
+
+    <main>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/1727998195631.png">
+                </a>
+            </div>
+
+            <div class="menu-icon" onclick="abrirMenu()">
+                <img src="img/menu.png">
+            </div>
+    
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Início
+                    </a>
+                </li>
+                <li>
+                    <a href="indexperso.html">
+                        Personalizar
+                    </a>
+                </li>
+                <li>
+                    <a href="indexsobre.html">
+                        Sobre
+                    </a>
+                </li>
+                <li>
+                    <a href="indxexcontato.html">
+                        Contato
+                    </a>
+                </li>
+                <li>
+                    <a href="indexcar.html" class="carrinho-link">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <script>
+            var menu = document.querySelector('nav ul');
+            var menuIcon = document.querySelector('.menu-icon');
+        
+            function abrirMenu() {
+                menu.classList.toggle('open');
+            }
+        
+            function selecionarBotao(event) {
+                const botoes = event.target.parentElement.querySelectorAll('button');
+                botoes.forEach(function(botao) {
+                    botao.classList.remove('selecionado');
+                });
+        
+                event.target.classList.add('selecionado');
+            }
+
+            function comprar() {
+    const generoBotao = document.querySelector('.opcao button.selecionado');
+    const genero = generoBotao ? generoBotao.textContent : 'não selecionado';
+
+    const tamanhoBotao = document.querySelector('.tamanho button.selecionado');
+    const tamanho = tamanhoBotao ? tamanhoBotao.textContent : 'não selecionado';
+
+    const estilo = typeof estiloSelecionado !== 'undefined' ? estiloSelecionado : 'não selecionado';
+
+    const corBotao = document.querySelector('.cores button.selecionado');
+    const cor = corBotao ? corBotao.getAttribute('data-cor') : 'sem cor';
+
+    const imgBlusa = document.getElementById("blusa-img");
+    const imagemUrl = imgBlusa.src;
+
+   
+    const imagemCarregada = document.getElementById('carregar-image');
+    const imagemCarregadaUrl = imagemCarregada ? imagemCarregada.src : ''; 
+
+    const position = {
+        left: imagemCarregada ? imagemCarregada.style.left || '0px' : '0px',
+        top: imagemCarregada ? imagemCarregada.style.top || '0px' : '0px',
+        width: imagemCarregada ? imagemCarregada.style.width || '100px' : '100px'
+    };
+
+    const item = {
+        nome: `Gênero: ${genero}, Estilo: ${estilo}, Cor: ${cor}`,
+        tamanho: tamanho,
+        quantidade: 1,
+        preco: 89.90,
+        imagem: imagemUrl,
+        imagemCarregadaUrl,  
+        position
+    };
+
+    adicionarAoCarrinho(item);
+    
+    setTimeout(() => {
+        window.location.href = 'indexcar.html';
+    }, 100);
+}
+
+function exibirCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const carrinhoContainer = document.getElementById('carrinho-container');
+    carrinhoContainer.innerHTML = '';
+
+    carrinho.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item-carrinho';
+
+        itemDiv.innerHTML = `
+            <p>${item.nome}</p>
+            <p>Tamanho: ${item.tamanho}</p>
+            <p>Quantidade: ${item.quantidade}</p>
+            <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+            <div style="position: relative; width: fit-content;">
+                <img src="${item.imagem}" alt="Blusa" style="width: 200px;" />
+                ${item.imagemCarregadaUrl ? `<img src="${item.imagemCarregadaUrl}" alt="Imagem Carregada" style="position: absolute; left: ${item.position.left}; top: ${item.position.top}; width: ${item.position.width}; height: auto;" />` : ''}
+            </div>
+        `;
+
+        carrinhoContainer.appendChild(itemDiv);
+    });
+}
+
+// Exibir carrinho ao carregar a página
+exibirCarrinho();
+
+function adicionarAoCarrinho(item) {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinho.push(item);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+
+
+function adicionarAoCarrinho(item) {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinho.push(item);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+
+        
+function changeImage(tipo) {
+    var imgBlusa = document.getElementById("blusa-img");
+    if (tipo === 'masculino') {
+        imgBlusa.src = "img/branco_frente.png";
+        toggleEstiloVisibility(false); // Oculta "Crooped"
+    } else if (tipo === 'feminino') {
+        imgBlusa.src = "img/fem_branco.png";
+        toggleEstiloVisibility(true); // Mostra "Crooped"
+    }
+}
+
+function toggleEstiloVisibility(mostrar) {
+    const estiloCrooped = document.querySelector('.estilos button[onclick*="Crooped"]');
+    if (estiloCrooped) {
+        estiloCrooped.style.display = mostrar ? 'inline-block' : 'none';
+    }
+}
+
+            function previewImage(event) {
+            const reader = new FileReader();
+             const image = document.getElementById('carregar-image');
+
+                reader.onload = function() {
+                  image.src = reader.result;
+                    image.style.display = 'block'; 
+                    image.style.position = 'absolute'; 
+                    image.draggable = true; // Permite arrastar a img
+                    image.style.cursor = 'grabbing';
+    }
+    
+                    reader.readAsDataURL(event.target.files[0]);
+
+                        // Adiciona o arrastar
+                 image.addEventListener('dragstart', (e) => {
+                        e.dataTransfer.setData('text/plain', null); // Necessário p/ drag and drop
+                     });
+
+                    image.addEventListener('dragend', (e) => {
+                        const offsetX = e.clientX - image.clientWidth / 2;
+                        const offsetY = e.clientY - image.clientHeight / 2;
+                        image.style.left = `${offsetX}px`;
+                        image.style.top = `${offsetY}px`;
+                    });
+    }   
+
+    function ajustarTamanho(valor) {
+    const image = document.getElementById('carregar-image');
+    image.style.width = `${valor}px`; 
+    image.style.height = 'auto'; 
+}
+        
+            var estiloSelecionado = '';
+        
+            function mudarEstilo(estilo) {
+                var imgBlusa = document.getElementById("blusa-img");
+                var tipo = document.querySelector('.opcao button.selecionado');
+        
+                imgBlusa.src = tipo && tipo.classList.contains('fem') ? "img/fem_branco.png" : "img/branco_frente.png";
+        
+                if (tipo) {
+                    var isFeminino = tipo.classList.contains('fem');
+                    estiloSelecionado = estilo; 
+        
+                    if (isFeminino) {
+                        if (estilo === 'Oversize') {
+                            imgBlusa.src = "img/over_fem.png"; 
+                        } else if (estilo === 'Crooped') {
+                            imgBlusa.src = "img/crooped_branco.png"; 
+                        } else if (estilo === 'Moletom') {
+                            imgBlusa.src = "img/mole_fem_1.png"; 
+                        }
+                    } else {
+                        if (estilo === 'Oversize') {
+                            imgBlusa.src = "img/over_masc.png"; 
+                        } else if (estilo === 'Moletom') {
+                            imgBlusa.src = "img/mole_masc_1.png"; 
+                        }
+                    }
+                }
+            }
+
+            
+        
+            function mudarcor(cor) {
+                var imgBlusa = document.getElementById("blusa-img");
+                var tipo = document.querySelector('.opcao button.selecionado');
+        
+                if (tipo) {
+                    var isFeminino = tipo.classList.contains('fem');
+
+                    if (isFeminino) {
+                        if (cor === 'branco') {
+                            imgBlusa.src = "img/fem_branco.png";
+                        } else if (cor === 'preto') {
+                            imgBlusa.src = "img/fem_preto_frente.png";
+                        } else if (cor === 'vermelho') {
+                            imgBlusa.src = "img/fem_verm_frente.png";
+                        }
+                    } else {
+                        if (cor === 'branco') {
+                            imgBlusa.src = "img/branco_frente.png";
+                        } else if (cor === 'preto') {
+                            imgBlusa.src = "img/preto_frente.png";
+                        } else if (cor === 'vermelho') {
+                            imgBlusa.src = "img/vermelho_frente.png";
+                        }
+                    }
+        
+                    if (isFeminino) {
+                        if (estiloSelecionado === 'Oversize') {
+                            if (cor === 'branco') {
+                                imgBlusa.src = "img/over_fem.png";
+                            } else if (cor === 'preto') {
+                                imgBlusa.src = "img/over_fem2.png";
+                            } else if (cor === 'vermelho') {
+                                imgBlusa.src = "img/over_fem3.png";
+                            }
+                        } else if (estiloSelecionado === 'Crooped') {
+                            if (cor === 'branco') {
+                                imgBlusa.src = "img/crooped_branco.png";
+                            } else if (cor === 'preto') {
+                                imgBlusa.src = "img/crooped_preto.png";
+                            } else if (cor === 'vermelho') {
+                                imgBlusa.src = "img/crooped_vermelho.png";
+                            }
+                        } else if (estiloSelecionado === 'Moletom') {
+                            if (cor === 'branco') {
+                                imgBlusa.src = "img/mole_fem_1.png";
+                            } else if (cor === 'preto') {
+                                imgBlusa.src = "img/mole_fem_2.png";
+                            } else if (cor === 'vermelho') {
+                                imgBlusa.src = "img/mole_fem_3.png";
+                            }
+                        }
+                    } else {
+                        if (estiloSelecionado === 'Oversize') {
+                            if (cor === 'branco') {
+                                imgBlusa.src = "img/over_masc.png";
+                            } else if (cor === 'preto') {
+                                imgBlusa.src = "img/over_masc2.png";
+                            } else if (cor === 'vermelho') {
+                                imgBlusa.src = "img/over_masc3.png";
+                            }
+                        
+                        } else if (estiloSelecionado === 'Moletom') {
+                            if (cor === 'branco') {
+                                imgBlusa.src = "img/mole_masc_1.png";
+                            } else if (cor === 'preto') {
+                                imgBlusa.src = "img/mole_masc_2.png";
+                            } else if (cor === 'vermelho') {
+                                imgBlusa.src = "img/mole_masc_3.png";
+                            }
+                        }
+                    }
+                }
+            }
+            
+        
+            window.onload = function() {
+                var imgBlusa = document.getElementById("blusa-img");
+                imgBlusa.src = "img/branco_frente.png";
+            };
+
+             let isDragging = false;
+        let offsetX, offsetY;
+
+        const image = document.getElementById('carregar-image');
+image.addEventListener('click', (event) => {
+    if (!isDragging) {
+        isDragging = true; // Ativa o modo de arrastar
+        offsetX = event.clientX - image.getBoundingClientRect().left;
+        offsetY = event.clientY - image.getBoundingClientRect().top;
+    } else {
+        isDragging = false; 
+    }
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (isDragging) {
+        image.style.position = 'absolute';
+        image.style.left = `${event.clientX - offsetX}px`;
+        image.style.top = `${event.clientY - offsetY}px`;
+    }
+});
+
+function moverImagem(direcao) {
+    const image = document.getElementById('carregar-image');
+    const step = 10; // Quantidade de pixels para mexer
+
+    let posicaoX = parseInt(image.style.left) || 0;
+    let posicaoY = parseInt(image.style.top) || 0;
+
+    switch (direcao) {
+        case 'cima':
+            posicaoY -= step;
+            break;
+        case 'baixo':
+            posicaoY += step;
+            break;
+        case 'esquerda':
+            posicaoX -= step;
+            break;
+        case 'direita':
+            posicaoX += step;
+            break;
+    }
+
+    image.style.left = `${posicaoX}px`;
+    image.style.top = `${posicaoY}px`;
+
+    
+}
+
+
+
+        </script>
+        
+        
+<div class="blusa">
+    <div class="blusa-img">
+    <img id="blusa-costa" src="img/branco_costa.png" alt="Blusa Costa" style="display: none;"> 
+        <img id="blusa-img" src="img/branco_frente.png" alt="Blusa">
+        <img id="carregar-image" alt="Estampa carregada">
+
+        <label class="carregar-btn">
+            Carregar estampa
+            <input type="file" accept="image/*" id="image-upload" style="display: none;" onchange="previewImage(event)">
+        </label>
+
+        <img id="carregar-image" alt="Pré-visualização da imagem carregada" style="display: none;"/>
+            <div>
+                    <label for="tamanho-estampa">Tamanho da Estampa:</label>
+                    <input type="range" id="tamanho-estampa" min="10" max="300" value="100" onchange="ajustarTamanho(this.value)">      
+                </div>
+
+                
+                <div class="controles-movimento">
+                    <button onclick="moverImagem('cima')">↑</button>
+                    <button onclick="moverImagem('baixo')">↓</button>
+                    <button onclick="moverImagem('esquerda')">←</button>
+                    <button onclick="moverImagem('direita')">→</button>
+                </div>
+
+            </div>
+
+        <div class="detalhe">
+        <h1>Personalize do seu jeito</h1>
+        <p class="preco">R$ 89,90</p>
+        <p class="descriçao">Vista a sua criatividade</p>
+
+        <div class="opcao">
+            <button class="masc" onclick="selecionarBotao(event); changeImage('masculino')">Masculina</button>
+            <button class="fem" onclick="selecionarBotao(event); changeImage ('feminino')">Feminina</button>
+        </div>
+
+        <div class="tamanho-cor">
+            <h3>Tamanhos </h3>
+
+            <div class="tamanho">
+                <button onclick="selecionarBotao(event)">P</button>
+                <button onclick="selecionarBotao(event)">M</button>
+                <button onclick="selecionarBotao(event)">G</button>
+                <button onclick="selecionarBotao(event)">GG</button>
+            </div>
+
+            <h4>Estilos disponíveis</h4>
+
+            <div class="estilos">
+                <button onclick="selecionarBotao(event); mudarEstilo('T-shirt')">T-shirt</button>
+                <button onclick="selecionarBotao(event); mudarEstilo('Oversize')">Oversize</button>
+                <button onclick="selecionarBotao(event); mudarEstilo('Crooped')">Crooped</button>
+                <button onclick="selecionarBotao(event); mudarEstilo('Moletom')">Moletom</button>
+            </div>
+
+            <div class="cores">
+                <span>Cores:</span>
+            <button id="cor-branco" class="cor um" data-cor="branco" onclick="selecionarBotao(event); mudarcor('branco')"></button>
+            <button id="cor-preto" class="cor dois" data-cor="preto" onclick="selecionarBotao(event); mudarcor('preto')"></button>
+            <button id="cor-vermelho" class="cor tres" data-cor="vermelho" onclick="selecionarBotao(event); mudarcor('vermelho')"></button>
+        </div>
+        </div>
+        
+        <button class="comprar" onclick="comprar()">Comprar
+            <a href="indexcar.html"></a>
+        </button>
+
+        
+        
+     </div>
+     <div id="carrinho-container"></div>
+     
+        <footer>
+      
+        </footer>
+
+    </body>
+</html>
