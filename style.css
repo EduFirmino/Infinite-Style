@@ -183,7 +183,12 @@ button:hover {
     color: rgb(0, 0, 0);
 }
 
-
+/* TAMANHO SELECIONADO */
+.tamanho button.selecionado {
+    background-color: #54a062d7 !important;
+    color: white !important;
+    border-color: #54a062d7 !important;
+}
 /* ================================================
    5. PÁGINA INICIAL - CARROSSEL
    ================================================ */
@@ -971,4 +976,80 @@ body.pagina-sobre {
         padding: 10px;
         cursor: pointer;
     }
+
+/* ================================================
+   14. SEÇÃO DE RECOMENDADOS
+   ================================================ */
+
+.recomendados {
+    padding: 40px 20px;
+    margin-bottom: 70px;
+}
+
+.recomendados h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recomendados-fila {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px;
+    width: 100%;
+}
+
+.recomendados-fila .produto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    text-align: center;
+    cursor: pointer !important;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recomendados-fila .produto:hover {
+    transform: scale(1.03);
+}
+
+.recomendados-fila .produto img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.recomendados-fila .produto h3 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.recomendados-fila .produto p {
+    font-size: 14px;
+    color: #333;
+}
+
+@media (max-width: 770px) {
+    .recomendados-fila {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+}
+
+/* Ajuste dos produtos recomendados */
+.produto {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.produto:hover {
+    transform: scale(1.03);
+}
+
+.produto img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
 }
