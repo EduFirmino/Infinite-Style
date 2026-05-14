@@ -11,20 +11,20 @@ Loja de roupas online com sistema de personalização e catálogo dinâmico.
 
 ### Home Page & Destaques
 O carrossel apresenta as principais coleções e novidades da loja.
-![Banner Principal da Loja](.img/home page principal mostrando o carrossel.png)
+![Banner Principal da Loja](./img/home page principal mostrando o carrossel.png)
 
 ### Catálogo de Produtos
 Interface limpa e organizada para visualização de roupas com animações interativas.
-![Grade de Produtos](.img/home page principal com as roupas .png)
+![Grade de Produtos](./img/home page principal com as roupas .png)
 
 ### Sistema de Personalização
 Ferramenta exclusiva onde o usuário pode customizar cores, estampas e modelos.
-![Interface de Personalização](.img/sistema de personalização funcionando .png)
+![Interface de Personalização](./img/sistema de personalização funcionando .png)
 
 ### Experiência de Compra
 Visualização detalhada do item e gerenciamento simplificado do carrinho.
-![Detalhes do Produto](.img/clicando na blusa .png)
-![Visualização do Carrinho](.img/carrinho de compras .png
+![Detalhes do Produto](./img/clicando na blusa .png)
+![Visualização do Carrinho](./img/carrinho de compras .png
 
 ## 🛠️ Tecnologias Utilizadas
 * HTML5 / CSS3 (Grid, Flexbox e Keyframes)
