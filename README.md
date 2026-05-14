@@ -11,7 +11,7 @@ Loja de roupas online com sistema de personalização e catálogo dinâmico.
 
 ### Home Page & Destaques
 O carrossel apresenta as principais coleções e novidades da loja.
-![Banner Principal da Loja] C:\Users\eduar\OneDrive\Documentos\Projetos\Infinite-Style-main\img\home page principal mostrando o carrossel.png
+![Banner Principal da Loja] .img\home page principal mostrando o carrossel.png
 
 ### Catálogo de Produtos
 Interface limpa e organizada para visualização de roupas com animações interativas.
