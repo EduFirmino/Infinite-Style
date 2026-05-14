@@ -24,7 +24,7 @@ Ferramenta exclusiva onde o usuário pode customizar cores, estampas e modelos.
 ### Experiência de Compra
 Visualização detalhada do item e gerenciamento simplificado do carrinho.
 ![Detalhes do Produto](./img/clicandonablusa.png)
-![Visualização do Carrinho](./img/carrinhodecompras.png
+![Visualização do Carrinho](./img/carrinhodecompras.png)
 
 ## 🛠️ Tecnologias Utilizadas
 * HTML5 / CSS3 (Grid, Flexbox e Keyframes)
